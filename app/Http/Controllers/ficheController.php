@@ -18,6 +18,7 @@ class ficheController extends Controller
 
         $maladies = "";
         $symptoms = "";
+
         foreach( $request->input('gridRadiosq3') as $maladie ){
 
             $maladies.= $maladie.',';
