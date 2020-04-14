@@ -65,7 +65,7 @@
             <h6 class="collapse-header">Outils :</h6>
             <a class="collapse-item" href="{{ route('users.index') }}">Utilisateurs</a>
             <a class="collapse-item" href="{{ route('roles.index') }}">Roles</a>
-            <a class="collapse-item" href="{{ route('traitemants.index') }}">Fiches</a>
+
           </div>
         </div>
       </li>
@@ -73,6 +73,17 @@
 
       <!-- Divider -->
       <hr class="sidebar-divider">
+
+      <li class="nav-item">
+        <a class="nav-link" href="{{ route('traitemants.index') }}">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Nouvelles Fiches</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ route('listarchive') }}">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Archive</span></a>
+      </li>
 
       <!-- Heading -->
 

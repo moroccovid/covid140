@@ -19,7 +19,7 @@
 @endif
 <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">Liste des Fiches</h6>
+              <h6 class="m-0 font-weight-bold text-primary">Archive des Fiches</h6>
             </div>
 <div class="card-body">
  <div class="table-responsive">
@@ -29,6 +29,7 @@
    <th>Nom</th>
    <th>Email</th>
    <th>Telephone</th>
+   <th>Etat</th>
    <th width="280px">Action</th>
  </tr>
  @if(!empty($fiches) && $fiches->count())
@@ -39,6 +40,7 @@
         <td>{{ $fiche->email }}</td>
 
         <td>{{ $fiche->telephone }}</td>
+        <td>@if ($fiche->positif == 0) negatif @else positif @endif </td>
 
         <td>
 

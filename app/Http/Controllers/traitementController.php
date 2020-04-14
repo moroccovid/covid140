@@ -142,4 +142,19 @@ class traitementController extends Controller
         return redirect()->route('traitemants.index')
                         ->with('success','Fiche updated successfully');
     }
+
+
+     /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function listarchive(Request $request)
+    {
+
+
+        $fiches = Fiche::Where('traite', 1)->orderBy('created_at','DESC')->paginate(10);
+        return view('fiches.archives',compact('fiches'))
+            ->with('i', ($request->input('page', 1) - 1) * 10);
+    }
 }

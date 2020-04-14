@@ -35,6 +35,6 @@ Route::group(['middleware' => ['auth']], function() {
     Route::resource('traitemants','traitementController');
 });
 
-Auth::routes();
 
+Route::get('/listarchive', 'traitementController@listarchive')->name('listarchive');
 Route::get('/home', 'HomeController@index')->name('home');
