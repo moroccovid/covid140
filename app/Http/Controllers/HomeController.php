@@ -26,7 +26,10 @@ class HomeController extends Controller
     {
 
         $fiches = Fiche::Where('traite', 0)->orderBy('created_at','DESC')->paginate(5);
-        return view('home',compact('fiches'))
+        $countp = Fiche::where('positif', 1)->count();
+        $countn = Fiche::where('positif', 0)->count();
+
+        return view('home',compact('fiches','countp','countn'))
             ->with('i', ($request->input('page', 1) - 1) * 5);
 
 
