@@ -1,0 +1,6 @@
+#FileLock
+#Sun Apr 12 21:18:27 WET 2020
+hostName=192.168.1.3
+id=171700b163835911598fca750c19388feec07876747
+method=file
+server=192.168.1.3\:60456
