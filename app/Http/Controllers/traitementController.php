@@ -1,12 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use App\Fiche;
+use App\Decision;
 use Spatie\Permission\Models\Permission;
 use App\Http\Controllers\Controller;
 use DB;
+
 
 class traitementController extends Controller
 {
@@ -29,6 +30,8 @@ class traitementController extends Controller
      */
     public function index(Request $request)
     {
+
+
         $fiches = Fiche::Where('traite', 0)->orderBy('created_at','DESC')->paginate(10);
         return view('fiches.index',compact('fiches'))
             ->with('i', ($request->input('page', 1) - 1) * 10);
@@ -48,13 +51,13 @@ class traitementController extends Controller
         "3" =>  "Oui et en attente du résultat du test .",
         "4" =>  "Oui. et le résultat du test est positif.");
 
-    $tabconfinement = array(
-        "1" =>      "Je suis en  isolement médical parce que j'ai rencontré une personne contaminée.",
-        "2" =>      "Je suis en isolement médical parce que j'ai des symptômes.",
-        "3" =>   "Je ne suis pas en isolement médical mais j'étais proche de quelqu'un en isolement médical.",
-        "4" =>   "Je ne suis pas en isolement médical.");
+        $tabconfinement = array(
+            "1" =>      "Je suis en  isolement médical parce que j'ai rencontré une personne contaminée.",
+            "2" =>      "Je suis en isolement médical parce que j'ai des symptômes.",
+            "3" =>   "Je ne suis pas en isolement médical mais j'étais proche de quelqu'un en isolement médical.",
+            "4" =>   "Je ne suis pas en isolement médical.");
 
-  $tabsmaladies = array(
+    $tabsmaladies = array(
 
         "1" =>    "Insuffisance cardiaque chronique.",
         "2" =>    "Cas précédent de crise cardiaque.",
@@ -102,7 +105,9 @@ class traitementController extends Controller
             $symptomes.= $tabsymptomes[$tmp]."<br/>";
 
         }
+        $decision = new Decision();
 
+        $decision->prediect(Fiche::all() , $fiche) ;
 
         return view('fiches.show',compact('fiche','covidetest','confinement','maladies','symptomes'));
     }
