@@ -107,9 +107,9 @@ class traitementController extends Controller
         }
         $decision = new Decision();
 
-        $decision->prediect(Fiche::all() , $fiche) ;
+        $resultat =  $decision->prediect(Fiche::all() , $fiche) ;
 
-        return view('fiches.show',compact('fiche','covidetest','confinement','maladies','symptomes'));
+        return view('fiches.show',compact('fiche','covidetest','confinement','maladies','symptomes','resultat'));
     }
 
 
