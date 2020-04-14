@@ -11,5 +11,7 @@
 
 Covid 140 is an open source web application based on Laravel, the main objective of the proposed application is to send a detailed form to the medical staff in order to evaluate it.
 
+A machine learning algorithm "Naive Bayes" will help experts it take decisions according to several featues.
+
 
 sudo chmod -R 777 storage/
