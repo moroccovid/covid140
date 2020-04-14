@@ -59,4 +59,10 @@
             </div>
         </div>
 </div>
+
+<script>
+ countp = {{$countp }} ;
+ countn = {{$countn }} ;
+</script>
+
 @endsection
