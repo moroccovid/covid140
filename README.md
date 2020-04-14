@@ -15,3 +15,5 @@ A machine learning algorithm "Naive Bayes" will help experts it take decisions a
 
 
 sudo chmod -R 777 storage/
+
+https://php-ml.readthedocs.io/en/latest/
