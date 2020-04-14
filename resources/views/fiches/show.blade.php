@@ -89,7 +89,6 @@
                         <label class="form-check-label" for="gridRadios2">
                         Fiche Traitée
                         </label>
-
      </div>
 
      <div class="col-xs-12 col-sm-12 col-md-12">
@@ -102,8 +101,8 @@
 
      <div class="col-xs-12 col-sm-12 col-md-12 form-group">
                   <input type="submit" class="btn btn-primary d-block w-100" value="Confirmer">
-                </div>
-              </div>
+    </div>
+
 
      {!! Form::close() !!}
 
