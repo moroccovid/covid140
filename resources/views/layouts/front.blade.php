@@ -69,7 +69,7 @@
               <li class="active"><a href="{{url('/')}}" class="nav-link">{{ __('messages.home') }}</a></li>
               <li><a href="{{ route('fiches.index') }}" class="nav-link">{{ __('messages.about') }}</a></li>
               <li><a href="pricing.html" class="nav-link">{{ __('messages.features') }}</a></li>
-              <li><a href="pricing.html" class="nav-link">{{ __('messages.team') }}</a></li>
+       <!--       <li><a href="pricing.html" class="nav-link">{{ __('messages.team') }}</a></li> -->
 
 
 
